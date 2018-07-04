@@ -1,39 +1,30 @@
-# Node Token Authentication
+# Глобальные пакеты
 
-This repo uses JSON Web Tokens and the [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) package to implement token based authentication on a simple Node.js API.
+`npm install -g yarn`
 
-This is a starting point to demonstrate the method of authentication by verifying a token using Express route middleware.
+# Сборка
 
-## Requirements
+## Локальная сборка и запуск сервера
+`yarn install`
 
-- node and npm
+`npm run start`
 
-## Usage
+Приложение будет доступно по http://localhost:4000
 
-1. Clone the repo: `git clone git@github.com:scotch-io/node-token-authentication`
-2. Install dependencies: `npm install`
-3. Change SECRET in `config.js`
-4. Add your own MongoDB database to `config.js`
-5. Start the server: `node server.js`
-6. Create sample user by visiting: `http://localhost:8080/setup`
+# Запуск docker
 
-Once everything is set up, we can begin to use our app by creating and verifying tokens.
+## Создание образа и запуск контейнера
 
-### Getting a Token
+`docker build -t api`
 
-Send a `POST` request to `http://localhost:8080/api/authenticate` with test user parameters as `x-www-form-urlencoded`. 
+`docker run --detach --publish 4000:4000 --name api-mock  api`
 
-```
-  {
-    name: 'Nick Cerminara',
-    password: 'password'
-  }
-```
+## Удаление всех контейнеров  
 
-### Verifying a Token and Listing Users
+`docker stop $(docker ps -a -q)`
 
-Send a `GET` request to `http://localhost:8080/api/users` with a header parameter of `x-access-token` and the token.
+`docker rm $(docker ps -a -q)`
 
-You can also send the token as a URL parameter: `http://localhost:8080/api/users?token=YOUR_TOKEN_HERE`
+## Удаление образа 
 
-Or you can send the token as a POST parameter of `token`.
+`docker rmi api`

@@ -5,6 +5,7 @@ module.exports = class User {
 		this.username = user.username;
 		this.password = user.password;
 		this.parentAgentId = user.parentAgentId;
+		this.balance = user.balance || 0;
 	}
 };
 

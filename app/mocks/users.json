@@ -1,1 +1,42 @@
-[]
+[    
+    {
+        "id": 10,
+        "title": "Агент",
+        "username": "agent",
+        "password": "83c6bd46bd4009f869ea6b6f399d676b",
+        "parentAgentId": null,
+        "balance": 45000
+    },
+    {
+        "id": 1,
+        "title": "Агент 1",
+        "username": "agent1",
+        "password": "",
+        "parentAgentId": 10,
+        "balance": 200
+    },
+    {
+        "id": 2,
+        "title": "Агент 2",
+        "username": "agent2",
+        "password": "",
+        "parentAgentId": 10,
+        "balance": 500
+    },
+    {
+        "id": 3,
+        "title": "Агент 3",
+        "username": "agent3",
+        "password": "",
+        "parentAgentId": 10,
+        "balance": 1000
+    },
+    {
+        "id": 4,
+        "title": "Агент 4",
+        "username": "agent4",
+        "password": "",
+        "parentAgentId": 10,
+        "balance": 200
+    }
+]
